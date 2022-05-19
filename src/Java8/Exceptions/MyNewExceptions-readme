@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------------
+When both catch and finally return values, what will be the final result?
+-----------------------------------------------------------------------------
+  ** returning_primitive_values()
+
+The finally block will still execute, even if the catch block has a return statement. If both catch and finally return, the receiving method will get the returned value from the finally block.
+
+  ** returning_referential_values()
+  
+In a try-catch-finally block that has return statements, only the value from the finally block will be returned.
+

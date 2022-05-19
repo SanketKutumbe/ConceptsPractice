@@ -1,0 +1,35 @@
+-----------------
+Throws exception
+-----------------
+  ** throws_unchecked_exception("filename.text");
+  ** throws_checked_exception("filename.text")
+
+The throw keyword, can be used to throw only one exception at a time, but we can declare multiple exceptions with throws
+
+--------------------------------------------
+Overriding methods with the throws clause
+--------------------------------------------
+
+  ** over_riding_methods_with_exceptions()
+
+The method being overridden in the child class has the option to either not throw the exception or throw a subclass of the exception declared in the parent method’s signature.
+
+--------------------------
+Creating Custom Exceptions
+--------------------------
+
+//Checked Exception
+class MyCustomException extends Exception { 
+    
+    MyCustomException(String message){
+      super(message);
+    }
+}
+
+//Unchecked Exception
+class MyCustomException extends RuntimeException { 
+    
+    MyCustomException(String message){
+      super(message);
+    }
+}

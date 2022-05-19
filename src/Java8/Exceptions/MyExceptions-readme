@@ -1,0 +1,54 @@
+------------------------------------
+Can we throw multiple exceptions?
+------------------------------------
+	** throw_multiple_exceptions()
+
+When the first exception is thrown, i.e.,
+NullPointerException
+the control moves on to find the relevant catch. If it is not found, the control moves to the
+finally
+clause if there is one.
+
+Because of this, the control will never be able to reach the second statement/exception (i.e.,
+ArithmeticException
+), making it unreachable.
+
+---------------------------------------------------------------
+Can multiple catch clauses with any exception be in any order?
+---------------------------------------------------------------
+If there are exceptions that are related in an IS-A relationship, then the hierarchy would be followed by the child-on-top to parent-on-bottom.
+
+Multiple exceptions can also be caught in a single catch clause using the pipe, |, operator.
+
+---------------------------
+Nested try-catch clauses
+---------------------------
+  ** nested_try_catch()
+
+In the code above, the division of a/b causes an ArithmeticException, which is caught by the inside catch clause. 
+In the case of the exception thrown, not handled, the outer catch clause will catch it.
+
+-----------------------------------
+Exception is thrown but not handled
+-----------------------------------
+  ** exception_is_thrown_but_not_handled()
+
+Here, months/salary is 5/0, which throws an ArithmeticException that will not be caught because the catch clause expects a NullPointerException or a subclass. However, the program doesn’t stop there. Even though the exception isn’t handled, it will still execute the finally block.
+
+----------------------------------------------------
+Returning from catch in a try-catch-finally block
+----------------------------------------------------
+	** returning_from_catch(5)
+
+Here, when the NullPointerException is caught, the catch clause has a return statement, which should return the control to main. However, before doing that, finally is executed.
+
+Note: 
+1) The use of finally is optional.
+2) Exceptions can also be thrown inside the catch clause.
+3) The finally block is a block that will be executed whether or not the exception is thrown/handled. It is useful to release resources, close connections, or close files.
+4) Yes, this is legal try can be followed by finally without a catch block
+5) finally can only be used once with a try or try-catch block.
+6) finally is optional in the try-catch block.
+7) finally will be executed whether or not the exception is handled.
+8) finally will still be executed if there is a return statement in the catch clause.
+
