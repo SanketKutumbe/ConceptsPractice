@@ -17,7 +17,7 @@ public class EV implements Vehicle{
             throw e;
         }
         catch (MyException e){
-            f.readFile();
+//            f.readFile();
         }
         catch (Exception e){
 //            f.readFile();
