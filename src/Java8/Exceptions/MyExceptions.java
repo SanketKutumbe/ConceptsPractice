@@ -1,7 +1,7 @@
 package Java8.Exceptions;
 
 public class MyExceptions {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         throw_multiple_exceptions();
         nested_try_catch();
 
@@ -14,6 +14,7 @@ public class MyExceptions {
         try{
             try{
                 a = a / b;
+                System.out.println(a);
             }catch(ArithmeticException e){
                 System.out.print("B");
             }
@@ -26,12 +27,12 @@ public class MyExceptions {
     {
         try {
             throw new NullPointerException(); // exception 1
-            throw new ArithmeticException();  // exception 2
+//            throw new ArithmeticException();  // exception 2
         } catch(ArithmeticException | NullPointerException e){
             // exception caught here
             System.out.print("A");
         }catch (Exception e) {
-            System.out.print(e);
+            e.printStackTrace();
         }
     }
 }

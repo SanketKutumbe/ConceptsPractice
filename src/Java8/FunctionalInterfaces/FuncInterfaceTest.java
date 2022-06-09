@@ -1,4 +1,6 @@
-package Java8;
+package Java8.FunctionalInterfaces;
+
+import java.util.function.Function;
 
 public class FuncInterfaceTest implements Test {
 
@@ -20,6 +22,19 @@ public class FuncInterfaceTest implements Test {
         System.out.println(fi.HelloWorld());
         System.out.println(Test.CustomMessage("Hi"));
         fi.bar();
+        Child.main(1);
+        Test test = new FuncInterfaceTest();
+        Function<String, String> customMessage = Test::CustomMessage;
+        System.out.println();
 
+    }
+}
+
+class Child extends FuncInterfaceTest
+{
+    public static void main(int a)
+    {
+        System.out.println("Anything");
+//        FuncInterfaceTest.main(new String[0]);
     }
 }

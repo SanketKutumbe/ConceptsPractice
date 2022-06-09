@@ -1,15 +1,15 @@
-package Java8;
+package Java8.FunctionalInterfaces;
 
 @FunctionalInterface // Annotation is optional
 public interface Test {
     // Default Method - Optional can be 0 or more
-    public default String HelloWorld() {
+    default String HelloWorld() {
         return "Hello World";
     }
     // Static Method - Optional can be 0 or more
-    public static String CustomMessage(String msg) {
+    static String CustomMessage(String msg) {
         return msg;
     }
     // Single Abstract Method
-    public void bar();
+    void bar();
 }
