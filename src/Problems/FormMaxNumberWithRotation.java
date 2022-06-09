@@ -1,6 +1,8 @@
 package Problems;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /*
     @author : Sanket Kutumbe
@@ -11,12 +13,26 @@ import java.util.Arrays;
     {1,3,4,2} Possible numbers with rotations are 1342, 3421, 4213, 2134
 
  */
-public class FormMaxNumberWithRotation {
+public class FormMaxNumberWithRotation implements Comparator<Integer>{
 
     public static void main(String[] args) {
 
-        int[] arr =  {546, 548, 60, 54, 123, 999};
+        Integer[] arr =  {546, 548, 60, 54, 123, 999};
 
+//        solvedUsingStringBuilder(arr);
+
+        solvedUsingComparator(arr);
+
+    }
+
+    private static void solvedUsingComparator(Integer[] arr) {
+        Arrays.sort(arr, new FormMaxNumberWithRotation() );
+
+
+        System.out.println(new ArrayList<Integer>(Arrays.asList(arr)));
+    }
+
+    private static void solvedUsingStringBuilder(int[] arr) {
         int index = -1, max = -1;
         StringBuilder sb = new StringBuilder();
 
@@ -40,6 +56,11 @@ public class FormMaxNumberWithRotation {
             sb.append(arr[i]);
 
         System.out.println(sb);
+    }
 
+    public int compare(Integer o1, Integer o2) {
+        String sa = o1.toString();
+        String sb = o2.toString();
+        return (sb+sa).compareTo(sa+sb);
     }
 }
