@@ -13,15 +13,15 @@ public class EV implements Vehicle{
         EV f = new EV();
         try{
             f.readFile();
-//            Exception e = null;
-//            throw e;
+            Exception e = null;
+            throw e;
         }
         catch (MyException e){
 //            f.readFile();
         }
-//        catch (Exception e){
-////            f.readFile();
-//        }
+        catch (Exception e){
+//            f.readFile();
+        }
         finally{
             f.deleteFile();
         }
