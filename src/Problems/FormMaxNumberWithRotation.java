@@ -18,18 +18,9 @@ public class FormMaxNumberWithRotation implements Comparator<Integer>{
     public static void main(String[] args) {
 
         Integer[] arr =  {546, 548, 60, 54, 123, 999};
-
 //        solvedUsingStringBuilder(arr);
-
         solvedUsingComparator(arr);
 
-    }
-
-    private static void solvedUsingComparator(Integer[] arr) {
-        Arrays.sort(arr, new FormMaxNumberWithRotation() );
-
-
-        System.out.println(new ArrayList<Integer>(Arrays.asList(arr)));
     }
 
     private static void solvedUsingStringBuilder(int[] arr) {
@@ -56,6 +47,11 @@ public class FormMaxNumberWithRotation implements Comparator<Integer>{
             sb.append(arr[i]);
 
         System.out.println(sb);
+    }
+
+    private static void solvedUsingComparator(Integer[] arr) {
+        Arrays.sort(arr, new FormMaxNumberWithRotation() );
+        System.out.println(new ArrayList<Integer>(Arrays.asList(arr)));
     }
 
     public int compare(Integer o1, Integer o2) {
